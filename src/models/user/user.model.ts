@@ -7,7 +7,7 @@ export interface BuyerAddModel {
 }
 
 export interface UserAttributes {
-    id: number
+    id?: number
     email: string
     password?: string
     firstName?: string

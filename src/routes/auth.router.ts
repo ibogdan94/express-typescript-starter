@@ -22,8 +22,8 @@ router.post('/register', userRules['forRegister'], async (req :Request, res: Res
   const registrationService = new RegistrationService();
 
   try {
-      const user = registrationService.register(payload);
-      return user.then(u => res.json(u))
+      const user = await registrationService.register(payload);
+      return res.json({id: user.id})
   } catch (error) {
       next(error)
   }

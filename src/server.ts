@@ -22,7 +22,7 @@ server.use('/', authRoutes);
 jwtMiddleware(server);
 
 server.get('/api/world', (req: Request, res:Response) => {
-    return res.json({auth: true})
+    return res.json({canSeeMe: true})
 });
 
 interface Error {
@@ -32,7 +32,7 @@ interface Error {
 
 server.use((err: Error, req: Request, res:Response, next:NextFunction) => {
     res.status(err.status || 500);
-    res.json({error: err.message});
+    res.json({message: err.message});
 });
 
 
