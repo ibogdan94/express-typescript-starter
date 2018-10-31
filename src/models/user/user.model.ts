@@ -1,11 +1,6 @@
 import * as Sequelize from 'sequelize'
 import {sequelize} from './../sequelize';
 
-export interface BuyerAddModel {
-    email: string
-    password: string
-}
-
 export interface UserAttributes {
     id?: number
     email: string
